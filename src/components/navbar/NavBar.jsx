@@ -1,12 +1,15 @@
+import { auth } from "@/lib/auth";
 import Links from "./links/Links";
 import styles from "./navbar.module.css";
 
-const NavBar = () => {
+const NavBar = async () => {
+  const session = await auth();
+  console.log(session);
   return (
     <div className={styles.container}>
       <div className={styles.logo}>Logo</div>
       <div>
-        <Links />
+        <Links session={session} />
       </div>
     </div>
   );
