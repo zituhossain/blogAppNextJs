@@ -17,7 +17,6 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      min: 6,
     },
     img: {
       type: String,
@@ -44,8 +43,13 @@ const postSchema = new mongoose.Schema(
       type: String,
     },
     userId: {
-      type: Boolean,
+      type: String,
       required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+      unique: true,
     },
   },
   { timestamps: true }
