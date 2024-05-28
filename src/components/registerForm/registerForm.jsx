@@ -24,7 +24,7 @@ const RegisterForm = () => {
       <input
         type="password"
         placeholder="Confirm Password"
-        name="confirmPassword"
+        name="passwordRepeat"
       />
       <button>Register</button>
       {state?.error}
